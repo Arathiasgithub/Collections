@@ -1,0 +1,62 @@
+import java.util.*;
+public class Menu_drivn_arraylist {
+
+	
+	public static void main(String[] args) {
+		Menu_drivn_arraylist m=new Menu_drivn_arraylist();
+		
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter a string");
+		String p=s.nextLine();
+		ArrayList<String> l=new ArrayList<String>();
+		int choice=0;
+		do {
+		  System.out.println("1.add item");
+		  System.out.println("2.view item");
+		  System.out.println("3.remove item");
+		  System.out.println("4.Search item");
+		  System.out.println("5.exit");
+		  System.out.println("6.not valid");
+		  System.out.println("enter choice");
+		  choice=s.nextInt();
+		  switch(choice)
+		  {
+		  case 1: l.add(p);
+		           break;
+		          
+		  case 2:   
+			  for(int i=0;i<l.size();i++)
+			        {
+				    System.out.println(l.get(i));
+			        }
+			  
+			     break;
+		  case 3 : System.out.println("enter the word to be removed");
+		           String c=s.next();
+		           l.remove(c);
+		           System.out.println("the remaining elements are");
+		           for(int i=0;i<l.size();i++)
+			        {
+				    System.out.println(l.get(i));
+			        }
+			  
+			      break;
+		  case 4: System.out.println("the word to be search");
+		          String d=s.next();
+		      //    System.out.println(l.contains());
+		          if(l.contains(d))
+		          {
+		        	  System.out.println(d+ "found it");  
+		          }else
+		          {
+		        	  System.out.println(d+ " not found ");
+		          }
+			      
+		  default:System.out.println("not mentioned");
+		          break;
+		  }
+		}while(choice!=5);
+		
+	}
+
+}
